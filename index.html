@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#home" data-section="home">CDB<span>.</span></a>
+        <p class="sidebar-label">Portfolio</p>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-button is-active" type="button" data-section="home">Home</button>
+          <button class="nav-button" type="button" data-section="skills">Skills</button>
+          <button class="nav-button" type="button" data-section="projects">Projects</button>
+          <button class="nav-button" type="button" data-section="experience">Experience</button>
+        </nav>
+        <button class="chat-button" type="button">Chat <span>↗</span></button>
+        <p class="sidebar-footer">Available for interesting work.</p>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <p class="topbar-status"><span></span> Open to opportunities</p>
+          <div class="theme-switcher" aria-label="Color theme">
+            <button class="theme-button is-selected" type="button" data-theme="light">Light</button>
+            <button class="theme-button" type="button" data-theme="dark">Dark</button>
+          </div>
+        </header>
+
+        <div class="content-panels">
+          <section class="content-panel is-visible" id="home" data-panel="home" aria-labelledby="home-title">
+            <div class="home-layout">
+              <div>
+                <p class="eyebrow">Builder | Learner</p>
+                <h1 id="home-title">Baraquil<br /><em>Christian David</em></h1>
+                <div class="about-me">
+                  <p class="detail-label">About Me</p>
+                  <p class="intro-copy">I’m a Computer Engineering graduate with a background in software development, technical support, and incident management.</p>
+                  <p class="intro-copy">As a Software Engineer, I developed and maintained C# applications while working with SQL databases, REST APIs, and Azure. In client support, I’ve strengthened my experience in troubleshooting, root cause analysis, authentication issues, and technical documentation.</p>
+                  <p class="intro-copy">These experiences shaped my interest in cybersecurity. I’m now focused on security operations, threat detection, vulnerability assessment, and incident response as I transition into a cybersecurity career.</p>
+                </div>
+                <div class="contact-links">
+                  <a href="mailto:baraquilc@gmail.com">baraquilc@gmail.com</a>
+                  <a href="tel:+639267293552">+63 926 729 3552</a>
+                </div>
+                <div class="home-details">
+                  <div>
+                    <span class="detail-label">Education</span>
+                    <h3>Computer Engineering</h3>
+                    <p>University of San Jose - Recoletos</p>
+                  </div>
+                  <div>
+                    <span class="detail-label">Certification</span>
+                    <h3>Google Cybersecurity Certificate</h3>
+                    <p>Professional Certificate</p>
+                    <div class="credly-badge" data-iframe-width="150" data-iframe-height="270" data-share-badge-id="b421ddde-dc22-4e49-a6a1-532b66a91230" data-share-badge-host="https://www.credly.com"></div>
+                  </div>
+                </div>
+                <div class="interests-block">
+                  <span class="detail-label">Interests</span>
+                  <div class="interest-list">
+                    <span>AI</span>
+                    <span>Photography</span>
+                    <span>Writing</span>
+                    <span>Machine Learning</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portrait-wrap">
+                <img class="portrait" src="images/377612358_6646214685425876_4392827573570536681_n.jpg" alt="Portrait of Christian David Baraquil" />
+                <span class="portrait-caption">Consolacion, Cebu</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-panel" id="skills" data-panel="skills" aria-labelledby="skills-title">
+            <p class="eyebrow">What I work with</p>
+            <h2 id="skills-title">Skills</h2>
+            <div class="skill-grid">
+              <div class="skill-category"><h3>Programming</h3><ul><li>C</li><li>C#</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul></div>
+              <div class="skill-category"><h3>Software Development</h3><ul><li>Desktop Application Development</li><li>ASP.NET MVC</li><li>RESTful API Integration</li><li>Application Troubleshooting</li><li>Production Support</li></ul></div>
+              <div class="skill-category"><h3>Databases &amp; Cloud</h3><ul><li>SQL Server</li><li>Microsoft Access</li><li>Microsoft Azure</li><li>Azure Blob Storage</li></ul></div>
+              <div class="skill-category"><h3>Computer Engineering</h3><ul><li>Embedded Systems</li><li>Logic Design</li><li>Circuit Design</li></ul></div>
+              <div class="skill-category skill-category-wide"><h3>Cybersecurity</h3><ul><li>Threat Detection</li><li>Incident Response</li><li>Vulnerability Assessment</li><li>SIEM</li><li>Linux</li><li>Security Monitoring</li><li>Python</li><li>SQL</li></ul></div>
+            </div>
+          </section>
+
+          <section class="content-panel" id="projects" data-panel="projects" aria-labelledby="projects-title">
+            <p class="eyebrow">Selected work</p><h2 id="projects-title">Projects</h2>
+            <div class="project-grid">
+              <article class="project-card project-feature"><span class="project-tag">Featured project</span><h3>SafeFile</h3><p class="project-meta">C# · Cybersecurity · File Security · 2026</p><p class="project-description">A C#-based project focused on file security and protection.</p></article>
+              <article class="project-card"><h3>Staff, Faculty &amp; Student Management System</h3><p class="project-meta">ASP.NET MVC · SQL Server · 2025</p><p class="project-description">Developed a web-based management system for staff, faculty, and student information using ASP.NET MVC and SQL.</p></article>
+              <article class="project-card"><h3>Home Security &amp; Face Recognition</h3><p class="project-meta">Python · YOLO · Raspberry Pi · Computer Vision · 2020 - 2022</p><p class="project-description">Developed a home security system combining human detection and face recognition to improve home monitoring.</p></article>
+              <article class="project-card"><h3>Voice-Activated Security Lock</h3><p class="project-meta">Raspberry Pi · Servo Motor · 2021</p><p class="project-description">Built a voice-controlled locking system using Raspberry Pi and a servo motor for automated access control.</p></article>
+              <article class="project-card"><h3>Airbnb Reservation System</h3><p class="project-meta">C# · SQL Database · 2020</p><p class="project-description">Description coming soon.</p></article>
+              <article class="project-card"><h3>Inventory Management System</h3><p class="project-meta">C# · MS Access · 2020</p><p class="project-description">Description coming soon.</p></article>
+              <article class="project-card"><h3>Human-in-Room Counter</h3><p class="project-meta">Logic Circuits · 2020</p><p class="project-description">Description coming soon.</p></article>
+            </div>
+          </section>
+
+          <section class="content-panel" id="experience" data-panel="experience" aria-labelledby="experience-title">
+            <p class="eyebrow">My background</p><h2 id="experience-title">Experience</h2>
+            <div class="experience-list">
+              <article class="experience-item">
+                <div>
+                  <h3>Client Support Representative</h3>
+                  <p class="experience-meta">Momentive Software · September 2025 - Present</p>
+                  <ul>
+                    <li>Provide technical support for software, account, and system-related issues across email, chat, and phone.</li>
+                    <li>Troubleshoot incidents, perform root cause analysis, and escalate complex issues when needed.</li>
+                    <li>Manage incidents from logging and prioritization through resolution and follow-up.</li>
+                    <li>Investigate issues with Engineering, Technical Support, and Product teams.</li>
+                    <li>Handle authentication and access-related issues while following security and support procedures.</li>
+                    <li>Document troubleshooting steps, findings, and resolutions for knowledge sharing and future reference.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="experience-item">
+                <div>
+                  <h3>Software Engineer</h3>
+                  <p class="experience-meta">Innodata Knowledge Services Inc. that there's a time and a place for every human being to live. · October 2024 - August 2025</p>
+                  <ul>
+                    <li>Developed and maintained C# desktop applications used in production environments.</li>
+                    <li>Troubleshot production issues and provided technical support to maintain system reliability.</li>
+                    <li>Integrated REST APIs and worked with SQL databases for application data management.</li>
+                    <li>Designed and optimized database schemas, queries, and data models.</li>
+                    <li>Used Microsoft Azure Blob Storage and AZCopy for data storage and retrieval.</li>
+                    <li>Collaborated with developers and project managers using Agile methodologies.</li>
+                    <li>Created technical documentation for application workflows and processes.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="experience-item">
+                <div>
+                  <h3>Outbound Customer Service/Sales Representative </h3>
+                  <p class="experience-meta">OutForce · June 2023 - September 2024</p>
+                  <ul>
+                    <li>Provided customer support and resolved product- and service-related concerns.</li>
+                    <li>Conducted outbound calls and converted prospects into customers.</li>
+                    <li>Maintained accurate CRM records and documented customer interactions.</li>
+                    <li>Assisted customers with product features, services, and troubleshooting.</li>
+                    <li>Developed strong communication, problem-solving, and customer relationship skills.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+    <dialog class="chat-window" aria-labelledby="chat-title">
+      <div class="chat-window-header">
+        <div class="chat-agent"><div class="agent-avatar">C</div><div><h2 id="chat-title">Christian David</h2><p><span></span> Usually replies quickly</p></div></div>
+        <button class="chat-close" type="button" aria-label="Close chat window">&times;</button>
+      </div>
+      <div class="chat-thread" aria-live="polite">
+        <p class="chat-date">Today</p>
+        <div class="message message-incoming"><span class="message-label">Christian</span><p>Hey there! Have a project or question in mind?</p><time>Now</time></div>
+        <div class="message message-outgoing"><p>Hi! I&apos;d like to get in touch.</p><time>Now</time></div>
+      </div>
+      <form class="chat-composer">
+        <label class 's not a rule, it's a rule in the sense that it's a... it's a... it's a principle.="sr-only" for="chat-message">Type a message</label>
+        <input id="chat-message" name="message" type="text" placeholder="Type dfather.a message..." autocomplete="off" required />
+        <button type="submit" aria-label="Send message">↗</button>
+      </form>
+      <div class="payment-request" hidden>
+        <span class="payment-label">Payment required</span>
+        <p>Your message is ready. Complete payment before it is sent.</p>
+        <button class="payment-button" type="button">Continue to payment <span>↗</span></button>
+        <small class="payment-note">Checkout provider not connected yet.</small>
+      </div>
+      <a class="chat-email" href="mailto:baraquilc@gmail.com">Prefer email? baraquilc@gmail.com</a>
+    </dialog>
+    <button class="cat-toggle" type="button" aria-label="Toggle playful design mode" aria-pressed="false"><span class="cat-face">🐱</span><span>Is it too plain?<br /><b>Click me for CSS.</b></span></button>
+    <div class="dancing-gifs" aria-hidden="true">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="" />
+      <img src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif" alt="" />
+      <img src="https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" alt="" />
+      <img src="https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif" alt="" />
+      <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="" />
+      <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" alt="" />
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
+  </body>
+</html> have a little bit of a buffer.
