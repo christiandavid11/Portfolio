@@ -343,10 +343,77 @@ h2 {
     0.78rem Arial,
     sans-serif;
 }
-.credly-badge {
-  width: 150px;
-  min-height: 90px;
-  margin-top: 14px;
+.certificate-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: min(230px, 100%);
+  margin-top: 16px;
+  padding: 14px 14px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.certificate-link:hover,
+.certificate-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+}
+.certificate-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 110px;
+  padding: 12px 14px;
+  border: 1px solid #edf1f5;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 45%, #f8fafc 100%);
+}
+.certificate-topline {
+  display: inline-block;
+  color: #1f2937;
+  font: 700 0.62rem Arial, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.certificate-brand {
+  display: inline-block;
+  color: #111827;
+  font: 700 1.2rem/1.1 Arial, sans-serif;
+  letter-spacing: -0.05em;
+}
+.certificate-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.certificate-badges span {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eaf2ff;
+  color: #234a9a;
+  font: 700 0.55rem Arial, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.certificate-badges span:last-child {
+  background: #eaf8ef;
+  color: #1f6b46;
+}
+.certificate-label {
+  color: var(--ink);
+  font: 700 0.72rem Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .interests-block {
   max-width: 720px;
