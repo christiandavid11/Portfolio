@@ -207,7 +207,6 @@
       <div class="chat-thread" aria-live="polite">
         <p class="chat-date">Today</p>
         <div class="message message-incoming"><span class="message-label">Christian</span><p>Hey there! Have a project or question in mind?</p><time>Now</time></div>
-        <div class="message message-outgoing"><p>Hi! I&apos;d like to get in touch.</p><time>Now</time></div>
       </div>
       <form class="chat-composer">
         <label class 's not a rule, it's a rule in the sense that it's a... it's a... it's a principle.="sr-only" for="chat-message">Type a message</label>
@@ -216,11 +215,26 @@
       </form>
       <div class="payment-request" hidden>
         <span class="payment-label">Payment required</span>
-        <p>Your message is ready. Complete payment before it is sent.</p>
-        <button class="payment-button" type="button">Continue to payment <span>↗</span></button>
-        <small class="payment-note">Checkout provider not connected yet.</small>
+        <p><strong>To send the message, PAY FIRST.</strong><br />Complete the PHP 250 payment to continue.</p>
+        <button class="payment-button" type="button">Pay PHP 250 with Stripe <span>↗</span></button>
+        <small class="payment-note">Powered by Stripe.</small>
       </div>
       <a class="chat-email" href="mailto:baraquilc@gmail.com">Prefer email? baraquilc@gmail.com</a>
+    </dialog>
+    <dialog class="stripe-dialog" aria-labelledby="stripe-dialog-title">
+      <div class="stripe-dialog-header">
+        <div>
+          <span class="stripe-kicker">Stripe test mode</span>
+          <h2 id="stripe-dialog-title">Scan to pay PHP 250</h2>
+        </div>
+        <button class="stripe-dialog-close" type="button" aria-label="Close Stripe payment prompt">&times;</button>
+      </div>
+      <div class="stripe-qr-frame">
+        <img class="stripe-qr" alt="Test payment QR code for PHP 250" />
+      </div>
+      <p class="stripe-dialog-copy">Scan this test QR code to simulate a Stripe payment request.</p>
+      <div class="stripe-amount"><span>Amount</span><strong>PHP 250.00</strong></div>
+      <small class="stripe-test-note">Powered by Stripe.</small>
     </dialog>
     <button class="cat-toggle" type="button" aria-label="Toggle playful design mode" aria-pressed="false"><span class="cat-face">🐱</span><span>Is it too plain?<br /><b>Click me for CSS.</b></span></button>
     <div class="dancing-gifs" aria-hidden="true">

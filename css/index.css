@@ -897,6 +897,86 @@ h3 {
   color: var(--muted);
   font-size: 0.58rem;
 }
+.stripe-dialog {
+  width: min(320px, calc(100% - 32px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 22%);
+}
+.stripe-dialog::backdrop {
+  background: rgb(15 23 42 / 48%);
+}
+.stripe-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 12px;
+}
+.stripe-kicker {
+  color: var(--accent);
+  font: 700 0.62rem Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.stripe-dialog h2 {
+  margin: 5px 0 0;
+  font: 700 1.15rem Arial, sans-serif;
+}
+.stripe-dialog-close {
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.stripe-qr-frame {
+  display: grid;
+  place-items: center;
+  margin: 0 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+.stripe-qr {
+  display: block;
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+}
+.stripe-dialog-copy {
+  margin: 14px 18px 10px;
+  color: var(--muted);
+  font: 0.72rem/1.45 Arial, sans-serif;
+  text-align: center;
+}
+.stripe-amount {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 18px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font: 0.72rem Arial, sans-serif;
+}
+.stripe-amount span {
+  color: var(--muted);
+}
+.stripe-amount strong {
+  color: var(--accent);
+}
+.stripe-test-note {
+  display: block;
+  padding: 12px 18px 17px;
+  color: var(--muted);
+  font: 0.6rem/1.4 Arial, sans-serif;
+  text-align: center;
+}
 .chat-email {
   display: block;
   padding: 0 18px 15px;

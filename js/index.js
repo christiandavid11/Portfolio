@@ -9,6 +9,19 @@ const chatComposer = document.querySelector(".chat-composer");
 const chatThread = document.querySelector(".chat-thread");
 const paymentRequest = document.querySelector(".payment-request");
 const paymentButton = document.querySelector(".payment-button");
+const stripeDialog = document.querySelector(".stripe-dialog");
+const stripeDialogClose = document.querySelector(".stripe-dialog-close");
+const stripeQr = document.querySelector(".stripe-qr");
+
+const testPaymentPayload = "stripe-test://payment?amount=25000&currency=php&description=Portfolio%20message";
+
+function openStripeTestPayment() {
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=12&data=${encodeURIComponent(testPaymentPayload)}`;
+  stripeQr.src = qrUrl;
+  if (!stripeDialog.open) {
+    stripeDialog.showModal();
+  }
+}
 
 function showSection(sectionName) {
   panels.forEach((panel) => {
@@ -72,11 +85,21 @@ chatComposer.addEventListener("submit", (event) => {
   paymentRequest.hidden = false;
 
   message.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  openStripeTestPayment();
 });
 
 paymentButton.addEventListener("click", () => {
-  paymentButton.textContent = "Add your payment link first";
-  paymentButton.disabled = true;
+  openStripeTestPayment();
+});
+
+stripeDialogClose.addEventListener("click", () => {
+  stripeDialog.close();
+});
+
+stripeDialog.addEventListener("click", (event) => {
+  if (event.target === stripeDialog) {
+    stripeDialog.close();
+  }
 });
 
 const initialSection = window.location.hash.slice(1);
