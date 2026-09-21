@@ -342,6 +342,13 @@ h2 {
   height: 18px;
   fill: var(--ink);
 }
+.social-mark {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+}
 .home-details {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
