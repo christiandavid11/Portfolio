@@ -1051,6 +1051,18 @@ body.playful * {
   animation-duration: 1.2s;
   animation-iteration-count: infinite;
 }
+body.playful h1,
+body.playful h2,
+body.playful h3,
+body.playful p,
+body.playful a,
+body.playful button,
+body.playful li,
+body.playful span {
+  animation:
+    text-bob 1.4s ease-in-out infinite alternate,
+    color-chaos 1.2s ease-in-out infinite;
+}
 body.playful .dancing-gifs {
   display: block;
 }
@@ -1134,6 +1146,14 @@ body.playful .dancing-gifs {
   }
   50% {
     color: #e900ff;
+  }
+}
+@keyframes text-bob {
+  from {
+    transform: translateY(-2px);
+  }
+  to {
+    transform: translateY(2px);
   }
 }
 @keyframes gif-drift {
