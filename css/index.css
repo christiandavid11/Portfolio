@@ -699,8 +699,10 @@ h3 {
   text-decoration: none;
 }
 .chat-window {
-  width: min(390px, calc(100% - 36px));
-  margin: auto;
+  width: min(500px, calc(100% - 36px));
+  height: min(720px, calc(100vh - 48px));
+  max-height: calc(100vh - 48px);
+  margin: 0;
   padding: 0;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -708,6 +710,12 @@ h3 {
   color: var(--ink);
   background: var(--paper);
   box-shadow: 0 18px 60px rgb(0 0 0 / 18%);
+}
+.chat-window[open] {
+  position: fixed;
+  inset: auto 28px 28px auto;
+  display: flex;
+  flex-direction: column;
 }
 .chat-window::backdrop {
   background: rgb(0 0 0 / 38%);
@@ -719,6 +727,11 @@ h3 {
   gap: 20px;
   padding: 17px 18px;
   border-bottom: 1px solid var(--line);
+}
+.chat-window-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 5px;
 }
 .chat-agent {
   display: flex;
@@ -740,7 +753,7 @@ h3 {
 .chat-window h2 {
   margin: 0 0 1px;
   font:
-    700 0.86rem Arial,
+    700 1rem Arial,
     sans-serif;
   letter-spacing: 0;
 }
@@ -748,16 +761,19 @@ h3 {
   margin: 0;
   color: var(--muted);
   font:
-    0.64rem Arial,
+    0.72rem Arial,
     sans-serif;
 }
-.chat-agent p span {
+.chat-agent p .chat-status-dot {
   display: inline-block;
   width: 6px;
   height: 6px;
   margin-right: 3px;
   border-radius: 50%;
   background: #63a375;
+}
+.chat-status-dot[hidden] {
+  display: none;
 }
 .chat-close {
   width: 27px;
@@ -770,17 +786,38 @@ h3 {
     sans-serif;
   line-height: 1;
 }
+.chat-minimize {
+  width: 27px;
+  height: 27px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--muted);
+  background: none;
+  font: 1.2rem Arial, sans-serif;
+  line-height: 1;
+}
+.chat-minimize:hover,
 .chat-close:hover {
   color: var(--accent);
   border-color: var(--accent);
 }
+.chat-view {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+.chat-view[hidden],
+.email-view[hidden] {
+  display: none;
+}
 .chat-thread {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 9px;
-  min-height: 220px;
-  max-height: 340px;
-  padding: 17px 18px;
+  min-height: 180px;
+  padding: 22px;
   overflow-y: auto;
   background: color-mix(in srgb, var(--paper) 88%, var(--line));
 }
@@ -794,11 +831,11 @@ h3 {
 }
 .message {
   width: fit-content;
-  max-width: 78%;
-  padding: 9px 12px;
+  max-width: 84%;
+  padding: 11px 14px;
   border-radius: 14px;
   font:
-    0.76rem/1.45 Arial,
+    0.88rem/1.5 Arial,
     sans-serif;
 }
 .message p {
@@ -832,27 +869,28 @@ h3 {
 }
 .chat-composer {
   display: flex;
-  gap: 8px;
-  padding: 12px 14px 8px;
+  gap: 10px;
+  padding: 16px 18px 12px;
 }
 .chat-composer input {
   min-width: 0;
   flex: 1;
-  padding: 10px 12px;
+  padding: 12px 15px;
   border: 1px solid var(--line);
   border-radius: 18px;
   outline: 0;
   color: var(--ink);
   background: transparent;
   font:
-    0.75rem Arial,
+    0.85rem Arial,
     sans-serif;
 }
 .chat-composer input:focus {
   border-color: var(--accent);
 }
 .chat-composer button {
-  width: 36px;
+  width: 42px;
+  flex: 0 0 42px;
   border: 0;
   border-radius: 50%;
   color: #fff;
@@ -865,8 +903,8 @@ h3 {
   display: none;
 }
 .payment-request {
-  margin: 0 14px 12px;
-  padding: 13px;
+  margin: 0 18px 12px;
+  padding: 16px;
   border: 1px solid var(--accent);
   border-radius: 8px;
   background: color-mix(in srgb, var(--paper) 90%, var(--accent));
@@ -985,13 +1023,128 @@ h3 {
   text-align: center;
 }
 .chat-email {
-  display: block;
-  padding: 0 18px 15px;
+  padding: 0;
+  border: 0;
   color: var(--muted);
-  font:
-    0.6rem Arial,
-    sans-serif;
-  text-decoration: none;
+  background: transparent;
+  font: 700 0.8rem Arial, sans-serif;
+}
+.chat-email:hover {
+  color: var(--accent);
+}
+.chat-email-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 0.72rem Arial, sans-serif;
+}
+.chat-email span {
+  margin-left: 6px;
+  color: var(--accent);
+}
+.email-view {
+  flex: 1;
+  min-height: 0;
+  padding: 24px;
+  overflow-y: auto;
+}
+.email-back {
+  margin-bottom: 28px;
+  padding: 0;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font: 0.8rem Arial, sans-serif;
+}
+.email-back:hover {
+  color: var(--accent);
+}
+.email-back span {
+  margin-right: 5px;
+}
+.email-view h3 {
+  margin-bottom: 8px;
+  font: 600 1.55rem Arial, sans-serif;
+  letter-spacing: -0.03em;
+}
+.email-view-copy {
+  max-width: 390px;
+  margin-bottom: 26px;
+  color: var(--muted);
+  font: 0.86rem/1.55 Arial, sans-serif;
+}
+.email-form {
+  display: grid;
+  gap: 9px;
+  font: 0.8rem Arial, sans-serif;
+}
+.email-form-status[hidden] {
+  display: none;
+}
+.email-form label {
+  margin-top: 8px;
+  color: var(--muted);
+}
+.email-form input,
+.email-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  outline: 0;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  resize: vertical;
+}
+.email-form input:focus,
+.email-form textarea:focus {
+  border-color: var(--accent);
+}
+.email-form button {
+  justify-self: start;
+  margin-top: 10px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--accent);
+  font: 700 0.8rem Arial, sans-serif;
+}
+.email-form button span {
+  margin-left: 14px;
+}
+.email-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.email-form-status {
+  margin: 5px 0 0;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.chat-restore {
+  position: fixed;
+  right: 28px;
+  bottom: 90px;
+  z-index: 6;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 24px;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+  font: 700 0.78rem Arial, sans-serif;
+}
+.chat-restore[hidden] {
+  display: none;
+}
+.chat-restore span {
+  margin-left: 10px;
 }
 .sr-only {
   position: absolute;
@@ -1196,7 +1349,16 @@ body.playful .dancing-gifs {
     border: 0;
   }
   .chat-window {
-    width: min(390px, calc(100% - 24px));
+    width: min(500px, calc(100vw - 24px));
+    height: min(720px, calc(100dvh - 24px));
+    max-height: calc(100dvh - 24px);
+  }
+  .chat-window[open] {
+    inset: auto 12px 12px auto;
+  }
+  .chat-restore {
+    right: 12px;
+    bottom: 86px;
   }
   .main-content {
     padding: 25px 0 180px;
