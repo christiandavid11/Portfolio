@@ -75,7 +75,8 @@ a {
 .sidebar-label {
   margin: 52px 0 18px;
   color: var(--muted);
-  font-size: 0.67rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
